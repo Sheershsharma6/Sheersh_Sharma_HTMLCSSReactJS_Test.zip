@@ -4,8 +4,13 @@
   padding: 0;
   box-sizing: border-box; /* Include padding and border in element's width */
 }
-
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/font/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
+  font-family: "Montserrat", sans-serif;
   height: 100%;
   width: 100%;
   overflow-x: hidden; /* Hide any overflow in the horizontal direction */
@@ -15,8 +20,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding-left:80px;
+  padding-right:80px;
   background-color: #f8f9fa;
+  height: 100px;
   max-width: 100vw; /* Prevent horizontal overflow */
 }
 
@@ -29,7 +36,9 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  gap: 30px;
   flex: 2;
   justify-content: center;
 }
@@ -54,8 +63,9 @@ button.log {
   background-color: transparent;
   color: #1E90FF;
   border: 2px solid #1E90FF;
-  border-radius: 10px;
-  padding: 15px 30px; /* Increased padding for larger buttons */
+  border-radius: 5px;
+  width: 130px;
+  height: 40px; /* Increased padding for larger buttons */
   font-size: 15px; /* Font size */
   cursor: pointer; /* Changes the cursor to pointer on hover */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -68,8 +78,9 @@ button.reg {
   background-color: #1E90FF;
   color: white;
   border: 2px solid #1E90FF;
-  border-radius: 10px;
-  padding: 15px 30px; /* Increased padding for larger buttons */
+  border-radius: 5px;
+  width: 130px;
+  height: 40px; /* Increased padding for larger buttons */
   font-size: 15px; /* Font size */
   cursor: pointer; /* Changes the cursor to pointer on hover */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -153,15 +164,18 @@ button.reg:hover {
 }
 
 .second button {
-  background-color: #1E90FF;
+  background-color: #18A0FB;
   color: white;
-  border: 2px solid #1E90FF;
   border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 20px;
+  width: 192px;
+  height: 52px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
   position: absolute;
   top: 80%; /* Adjust as needed */
   left: 50%;
+  border: none;
   transform: translate(-50%, -50%);
 }
 
@@ -174,17 +188,11 @@ button.reg:hover {
   left: 50%; /* Horizontally center */
   transform: translateX(-50%); /* Center the text horizontally */
   color: white;
-  font-weight: bold;
-  font-size: 40px; /* Adjust font size as needed */
+  font-size: 56px; /* Adjust font size as needed */
   text-align: center;
 }
 
-/* Global styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 /* Media Queries */
 
@@ -232,39 +240,31 @@ button.reg:hover {
   }
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f8f9fa;
+
+.intro{
+  margin-top: 120px;
+  padding-left: 80px;
+  text-align: start;
 }
-
-
 
 .intro h1 {
-  font-size: 70px;
-  font-weight: bold;
-  color: #333;
-  display: flex;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+
 }
 
-.content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-  gap: 40px; /* Spacing between cards */
-  padding: 0 10%;
-}
+
 
 .card {
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  width: 686px;
+  height: 222px;
+
 }
 
 .card h2 {
   font-size: 24px;
-  color: #333;
   margin-bottom: 15px;
 }
 
@@ -274,12 +274,13 @@ body {
 }
 
 .card button {
-  background-color: #1E90FF;
+  background-color: #18A0FB;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
   font-size: 16px;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -288,9 +289,7 @@ body {
   background-color: #187bcd;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+
 
 /* Responsive for tablets (768px and smaller) */
 @media (max-width: 768px) {
@@ -325,77 +324,60 @@ body {
 }
 
 /* Responsive for larger screens (1200px and above) */
-@media (min-width: 1200px) {
-  .content {
-    grid-template-columns: repeat(3, 1fr); /* Three columns layout for larger screens */
-    gap: 60px;
-  }
 
-  .intro h1 {
-    font-size: 48px; /* Increase the heading size for larger screens */
-  }
-
-  .card h2 {
-    font-size: 28px;
-  }
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f8f9fa;
-}
-
-.intro {
-  text-align: center;
-  padding: 40px;
-}
-
-.intro h1 {
-  font-size: 28px;
-  color: #333;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 40px 10%;
-}
-
-.text-section {
-  flex: 1;
+.card-sec{
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+.content-card {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 80px;
+  padding-right: 80px;
+  height: 548px;
+}
+.card-row{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.text-section {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  width: 522px;
+}
 
 .card h2 {
   font-size: 20px;
-  color: #333;
   margin-bottom: 10px;
 }
 
 .card p {
-  color: #666;
+  width: 660px;
+  line-height: 30px;
 }
 
 .image-section {
-  flex: 1;
+  width: 730px;
+  /* height: 740px; */
 }
 
 .image-section img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+ width: 100%;
+ height: auto;
   object-fit: cover;
+}
+.margin{
+  background-color: #F2F2F2;
+  height: 13vh;
+  min-width: 100%;
 }
 
 /* Responsive for smaller screens */
@@ -438,90 +420,105 @@ body {
   }
 }
 
-/* Responsive for larger screens (min-width: 1200px) */
-@media (min-width: 1200px) {
-  .intro h1 {
-    font-size: 36px; /* Increase the heading size for larger screens */
-  }
-
-  .content {
-    padding: 40px 15%; /* Increase side padding on larger screens */
-  }
-
-  .text-section {
-    gap: 40px; /* Increase gap between text elements for better spacing */
-  }
-
-  .image-section img {
-    border-radius: 12px; /* Slightly increase the border radius for larger screens */
-  }
+.text-section-head p{
+  font-size: 36px;
+  line-height: 50px;
+  text-align: center;
+  width: 1392px;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.text-section-head h1{
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+  text-align: center;
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+.text-section-head{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
+#gallery-card p , #gallery-card1 p, #gallery-card2 p{
+  width: 550px;
+}
+#gallery-card, #gallery-card1, #gallery-card2{
+  height: 20vh;
+  width: 522px;
+}
 .image-gallery {
   text-align: center;
   padding: 50px;
   background-color: white;
+  padding-top: 100px;
 }
-
+.content-gallery{
+  display: flex;
+  flex-direction: column;
+  padding-top: 15vh;
+  height: 1182px;
+  padding-left: 80px;
+}
+.gallery-container{
+  margin-top: 15vh;
+  display: flex;
+  gap: 100px;
+}
+.image-gallery-head{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
 .image-gallery h1 {
-  font-size: 2em;
+  font-size: 48px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .image-gallery p {
-  font-size: 1.2em;
+  font-size: 32px;
+  font-weight: 400;
   margin-bottom: 40px;
-  color: #777;
 }
 
 .gallery-row {
   display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
   margin: 0 auto;
-  gap: 20px; /* Add some spacing between the gallery items */
+  justify-content: center;
+  align-items: center;
+  gap: 75px; 
+  margin-top: 60px;
 }
 
 .gallery-item {
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 30%;
-  padding: 20px;
+  display: flex;
   text-align: center;
+  width: 380px;
+  height: 480.7px;
+  border:1px solid #CCCCCC;
+  flex-direction: column;
 }
-
+.gallery-item-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 55px;
+  text-align: left;
+  height: 100%;
+}
 .gallery-item img {
   width: 100%;
   height: auto;
-  border-radius: 8px 8px 0 0;
 }
 
 .gallery-item h3 {
   font-size: 1.5em;
-  margin: 15px 0;
+
 }
 
 .gallery-item p {
   font-size: 1em;
-  color: #555;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Responsive design for tablets and smaller screens */
 @media (max-width: 768px) {
@@ -572,10 +569,6 @@ body {
     font-size: 0.9em;
   }
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-}
 
 .signup-section {
   text-align: center;
@@ -583,14 +576,17 @@ body {
 }
 
 .signup-section h1 {
-  font-size: 2.2em;
+  font-size: 48px;
   margin-bottom: 15px;
   font-weight: 700;
 }
 
 .signup-section p {
-  font-size: 1.1em;
-  color: #666;
+  width: 1192px;
+  font-size: 30px;
+  margin: auto;
+  
+  line-height: 50px;
   margin-bottom: 40px;
 }
 
@@ -620,40 +616,49 @@ body {
 
 .form-row {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
+  gap: 20px;
 }
 
+.form-row input::placeholder {
+
+  color: #C4C4C4;
+}
 .form-row input {
   width: 48%; /* Adjust to maintain proper spacing */
   padding: 12px;
   font-size: 0.95em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 2px solid #C4C4C4;
 }
 
-.signup-form input[type="email"],
+.signup-form input[type="password"]::placeholder {
+  color: #C4C4C4;
+}
 .signup-form input[type="password"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
   font-size: 0.95em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1.5px solid #C4C4C4;
 }
-
+.btn-container{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
 .signup-form button {
   width: 130px;
   height: 40px;
   padding: 12px;
-  background-color: #007bff;
+  background-color: #18A0FB;
   color: white;
   font-size: 1em;
   font-weight: 600;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 20px; /* Added margin-top for spacing above the button */
+  margin-top: 10px; /* Added margin-top for spacing above the button */
 }
 
 .signup-form button:hover {
@@ -717,17 +722,21 @@ body {
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  padding-left: 80px;
+  height: 349px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 80px;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 43vw;
   width: 100%;
-  margin: 0 auto;
-  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 .footer-logo h3 {
@@ -738,26 +747,32 @@ body {
 
 .footer-links {
   display: flex;
-  justify-content: space-between;
   width: 50%;
 }
-
+.footer-links-btn{
+  display: flex;
+  gap: 119px;
+}
 .footer-column {
   margin-right: 50px;
 }
 
 .footer-column h4 {
-  font-size: 1.2em;
+  font-size: 15px;
   margin-bottom: 10px;
   font-weight: 700;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .footer-column ul {
   list-style: none;
+  white-space: nowrap;
 }
 
 .footer-column ul li {
   margin-bottom: 8px;
+  font-size: 15px;
 }
 
 .footer-column ul li a {
@@ -790,8 +805,9 @@ body {
 }
 
 .login-btn {
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #fff;
+  border: 1px solid #007bff;
+  color: #007bff;
 }
 
 .register-btn:hover,
@@ -800,14 +816,15 @@ body {
 }
 .footer-bottom {
   margin-top: 40px;
-  border-top: 1px solid #555;
   padding-top: 20px;
   display: flex;
-  justify-content: space-between;
+  gap: 700px;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
+  width: 100%;
+}
+#line{
+  height: .5px;
+  width: 100%;
 }
 
 .footer-bottom p {
@@ -828,8 +845,13 @@ body {
 }
 
 .footer-social a {
-  color: #ccc;
-  font-size: 1.5em;
+  background-color: #4B4B4B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
 }
 
 .footer-social a:hover {
