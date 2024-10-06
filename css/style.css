@@ -1,0 +1,905 @@
+/* Prevent horizontal overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Hide any overflow in the horizontal direction */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  max-width: 100vw; /* Prevent horizontal overflow */
+}
+
+/* Logo section */
+.logo {
+  flex: 1;
+}
+
+/* Navigation links section */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  flex: 2;
+  justify-content: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Buttons (Login/Register) section */
+.btn {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  width: 130px;
+  height: 40px;
+  gap: 20px;
+}
+
+/* Button styles */
+button.log {
+  background-color: transparent;
+  color: #1E90FF;
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  padding: 15px 30px; /* Increased padding for larger buttons */
+  font-size: 15px; /* Font size */
+  cursor: pointer; /* Changes the cursor to pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  display: inline-flex; /* Use inline-flex to allow for alignment */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+button.reg {
+  background-color: #1E90FF;
+  color: white;
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  padding: 15px 30px; /* Increased padding for larger buttons */
+  font-size: 15px; /* Font size */
+  cursor: pointer; /* Changes the cursor to pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  display: inline-flex; /* Use inline-flex to allow for alignment */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+/* Hover effects for better interaction */
+button.log:hover {
+  background-color: #1E90FF; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+button.reg:hover {
+  background-color: #187bcd; /* Darker shade on hover */
+}
+
+
+/* Media Query for Tablets (768px and smaller) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Media Query for Mobile (480px and smaller) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Adjust button sizes for mobile */
+  button.log, button.reg {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
+
+
+.second {
+  position: relative; /* Ensure the button is positioned relative to the container */
+  width: 100%;
+  height: 600px;
+  overflow: hidden; /* Prevent any content from overflowing the container */
+}
+
+.second img {
+  width: 100%;
+  height: 600px;
+  gap: 0px;
+  opacity: 1; /* Set opacity to 1 to make the image visible */
+  position: absolute;
+  filter: brightness(50%);
+}
+
+.second button {
+  background-color: #1E90FF;
+  color: white;
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  position: absolute;
+  top: 80%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Text overlay */
+.centered-text {
+  position: absolute;
+  width: 1392px; /* Set text width */
+  height: 80px;  /* Set height of text container */
+  top: 331px; /* Vertically position at 331px from the top */
+  left: 50%; /* Horizontally center */
+  transform: translateX(-50%); /* Center the text horizontally */
+  color: white;
+  font-weight: bold;
+  font-size: 40px; /* Adjust font size as needed */
+  text-align: center;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Media Queries */
+
+/* For Tablets (768px and smaller) */
+@media (max-width: 768px) {
+  .second {
+    height: 400px; /* Adjust container height for tablets */
+  }
+
+  .second img {
+    height: 400px; /* Adjust image height for tablets */
+  }
+
+  .second button {
+    font-size: 18px; /* Reduce button font size */
+    top: 75%; /* Adjust button positioning */
+  }
+
+  .centered-text {
+    width: 100%; /* Ensure text container fits smaller screens */
+    font-size: 30px; /* Reduce font size for tablets */
+    top: 40%; /* Adjust text position */
+  }
+}
+
+/* For Mobile Devices (480px and smaller) */
+@media (max-width: 480px) {
+  .second {
+    height: 300px; /* Adjust container height for mobile */
+  }
+
+  .second img {
+    height: 300px; /* Adjust image height for mobile */
+  }
+
+  .second button {
+    font-size: 16px; /* Further reduce button font size */
+    top: 70%; /* Adjust button positioning */
+  }
+
+  .centered-text {
+    width: 100%; /* Ensure text container fits mobile screens */
+    font-size: 20px; /* Reduce font size for mobile */
+    top: 35%; /* Adjust text position */
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+
+
+.intro h1 {
+  font-size: 70px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  gap: 40px; /* Spacing between cards */
+  padding: 0 10%;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card button {
+  background-color: #1E90FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #187bcd;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive for tablets (768px and smaller) */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr; /* Change to one column layout */
+    gap: 20px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+}
+
+/* Responsive for small screens (480px and smaller) */
+@media (max-width: 480px) {
+  .intro {
+    padding: 40px 5%; /* Reduce padding for smaller screens */
+  }
+
+  .intro h1 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  .card h2 {
+    font-size: 20px; /* Adjust card title size */
+  }
+
+  .card button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px 16px; /* Adjust button padding */
+  }
+}
+
+/* Responsive for larger screens (1200px and above) */
+@media (min-width: 1200px) {
+  .content {
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout for larger screens */
+    gap: 60px;
+  }
+
+  .intro h1 {
+    font-size: 48px; /* Increase the heading size for larger screens */
+  }
+
+  .card h2 {
+    font-size: 28px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+.intro {
+  text-align: center;
+  padding: 40px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px 10%;
+}
+
+.text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+}
+
+.image-section {
+  flex: 1;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-section {
+    width: 100%;
+  }
+
+  .image-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Responsive for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 24px;
+  }
+
+  .content {
+    padding: 20px 5%; /* Reduce padding for smaller screens */
+  }
+
+  .text-section {
+    gap: 20px; /* Reduce gap between text elements */
+  }
+
+  .card h2 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .card p {
+    font-size: 14px; /* Reduce font size for better readability */
+  }
+}
+
+/* Responsive for larger screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .intro h1 {
+    font-size: 36px; /* Increase the heading size for larger screens */
+  }
+
+  .content {
+    padding: 40px 15%; /* Increase side padding on larger screens */
+  }
+
+  .text-section {
+    gap: 40px; /* Increase gap between text elements for better spacing */
+  }
+
+  .image-section img {
+    border-radius: 12px; /* Slightly increase the border radius for larger screens */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.image-gallery {
+  text-align: center;
+  padding: 50px;
+  background-color: white;
+}
+
+.image-gallery h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.image-gallery p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #777;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px; /* Add some spacing between the gallery items */
+}
+
+.gallery-item {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.gallery-item h3 {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.gallery-item p {
+  font-size: 1em;
+  color: #555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 768px) {
+  .gallery-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 80%;
+    margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+  }
+
+  .image-gallery h1 {
+    font-size: 1.8em;
+  }
+
+  .image-gallery p {
+    font-size: 1.1em;
+  }
+}
+
+/* Responsive design for mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .gallery-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-gallery h1 {
+    font-size: 1.5em;
+  }
+
+  .image-gallery p {
+    font-size: 1em;
+  }
+
+  .gallery-item h3 {
+    font-size: 1.3em;
+  }
+
+  .gallery-item p {
+    font-size: 0.9em;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.signup-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.signup-section h1 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.signup-section p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.signup-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* Added bottom margin for separation */
+}
+
+.signup-form {
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+  width: 622px; /* Fixed width for consistency */
+  height: auto; /* Set height to auto to accommodate content */
+  border: 1px solid black; /* Light border */
+}
+
+.signup-form h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: left; /* Align the form header to the left */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-row input {
+  width: 48%; /* Adjust to maintain proper spacing */
+  padding: 12px;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.signup-form button {
+  width: 130px;
+  height: 40px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px; /* Added margin-top for spacing above the button */
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .signup-section h1 {
+    font-size: 2em; /* Slightly smaller heading */
+  }
+
+  .signup-section p {
+    font-size: 1em; /* Slightly smaller paragraph text */
+  }
+
+  .signup-form {
+    padding: 30px; /* Reduce padding */
+  }
+
+  .signup-form h3 {
+    font-size: 1.2em; /* Adjust header size */
+  }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .signup-section h1 {
+    font-size: 1.8em; /* Smaller heading for mobile */
+  }
+
+  .signup-section p {
+    font-size: 0.9em; /* Smaller paragraph text */
+  }
+
+  .signup-form {
+    padding: 20px; /* Further reduce padding */
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack inputs vertically */
+  }
+
+  .form-row input {
+    width: 100%; /* Full width for inputs */
+    margin-bottom: 10px; /* Add some spacing */
+  }
+
+  .signup-form h3 {
+    font-size: 1.1em; /* Smaller header size */
+  }
+
+  .signup-form button {
+    font-size: 0.95em; /* Smaller button text */
+  }
+}
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-logo h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.footer-column {
+  margin-right: 50px;
+}
+
+.footer-column h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1em;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-btn {
+  text-align: center;
+  padding: 12px 25px;
+  font-size: 1em;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.register-btn {
+  background-color: #007bff;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.register-btn:hover,
+.login-btn:hover {
+  opacity: 0.8;
+}
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #555;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-social span {
+  font-size: 1em;
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.footer-social a {
+  color: #ccc;
+  font-size: 1.5em;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+  }
+
+  .footer-links {
+    width: 100%; /* Full width for links */
+    justify-content: center; /* Center links */
+    margin-bottom: 20px; /* Space between link and buttons */
+  }
+
+  .footer-column {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
+
+  .footer-logo h3 {
+    font-size: 1.5em; /* Reduce logo font size */
+  }
+
+  .footer-column h4 {
+    font-size: 1.1em; /* Reduce column header size */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack items in the bottom */
+    align-items: center; /* Center align */
+    text-align: center; /* Center text */
+  }
+
+  .footer-bottom p {
+    font-size: 0.8em; /* Reduce font size */
+  }
+
+  .footer-social span {
+    font-size: 0.9em; /* Reduce social media label font size */
+  }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .footer-logo h3 {
+    font-size: 1.3em; /* Further reduce logo font size */
+  }
+
+  .footer-column h4 {
+    font-size: 1em; /* Further reduce column header size */
+  }
+
+  .footer-btn {
+    padding: 10px 20px; /* Reduce button padding */
+    font-size: 0.9em; /* Smaller button text */
+  }
+
+  .footer-social a {
+    font-size: 1.2em; /* Smaller social media icon size */
+  }
+}
+/* Media query for responsiveness */
